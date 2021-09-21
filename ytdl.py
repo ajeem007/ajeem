@@ -125,7 +125,7 @@ def download_handler(client: "Client", message: "types.Message"):
 
     if not re.findall(r"^https?://", url.lower()):
         Redis().update_metrics("bad_request")
-        message.reply_text("I think you should send me a link.", quote=True)
+        message.reply_text("", quote=True)
         return
 
     Redis().update_metrics("video_request")
